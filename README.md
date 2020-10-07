@@ -1,3 +1,3 @@
 # oz_cats_viewer
 
-Sourced from https://thecatapi.com
+Images are sourced from https://thecatapi.com
