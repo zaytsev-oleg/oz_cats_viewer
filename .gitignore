@@ -1,0 +1,7 @@
+# Anything
+.vs/
+packages/
+ReturnOnIntelligence/bin/
+ReturnOnIntelligence/obj/
+RoiTestModule/bin/
+RoiTestModule/obj/
