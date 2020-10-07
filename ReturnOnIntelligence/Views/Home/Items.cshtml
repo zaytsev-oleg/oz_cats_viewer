@@ -1,0 +1,38 @@
+﻿@model Image[]
+
+@helper GetRecord(string format, params object[] values)
+{
+    ViewContext.Writer.Write(format, values);
+}
+
+@Html.Partial("_Pagination", new ViewDataDictionary { {"previous", ViewBag.PreviousPage}, {"next", ViewBag.NextPage}, {"category", ViewBag.Category} })
+
+<br/>
+
+<h1>Category: @ViewBag.Category</h1>
+
+@if (Model.Length == 0)
+{
+    <p>No data</p>
+}
+else
+{
+    var i = (int) ViewBag.Basis;
+
+    foreach (var image in Model)
+    {
+        <b>@GetRecord("{0}.", ++i)</b>
+        <br />
+        @GetRecord("Id: {0}", image.Id)
+        <br />
+        @GetRecord("Source: {0}", image.SourceUrl)
+        <br />
+        <a href="@image.Url" target="_blank"><img width="100" height="100" src="@image.Url"></a>
+        <br />
+        <br />
+    }
+}
+
+<br/>
+
+@Html.Partial("_Pagination", new ViewDataDictionary { {"previous", ViewBag.PreviousPage}, {"next", ViewBag.NextPage}, {"category", ViewBag.Category} })

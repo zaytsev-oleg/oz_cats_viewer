@@ -1,0 +1,22 @@
+﻿@model Category[]
+
+<p align="center">
+    Available categories:
+
+    <br/>
+    <br/>
+
+    @foreach (var category in Model)
+    {
+        <span><a href="@Url.Action("items", "home", new {category = category.Name})">@category.Name</a> |</span>
+    }
+
+    <br/>
+    <br/>
+
+    @{
+        <img src="/Images/cats_@((new Random(DateTime.Now.Millisecond)).Next(0, 3)).jpg" title="meow">
+        <br/>
+        @(DateTime.Now)
+    }
+</p>

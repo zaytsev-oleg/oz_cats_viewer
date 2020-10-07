@@ -1,0 +1,19 @@
+﻿<p align="center">
+    @if (ViewData["previous"] != null)
+    {
+        <a href="@Url.Action("items", "home", new {category = ViewData["category"], pageIndex = (int) ViewData["previous"]})">
+            [previous]
+        </a>        
+    }
+
+    &nbsp;
+    <a href="@Url.Action("index", "home")">[index]</a>
+    &nbsp;
+
+    @if (ViewData["next"] != null)
+    {
+        <a href="@Url.Action("items", "home", new {category = ViewData["category"], pageIndex = (int) ViewData["next"]})">
+            [next]
+        </a>
+    }
+</p>
